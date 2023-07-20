@@ -6,7 +6,8 @@ import axios from "axios";
 
 const Card = () => {
   const [beerData, setBeerData] = useState([]);
-  const [visibleCards, setVisibleCards] = useState(5);
+  const [visibleCards, setVisibleCards] = useState(15);
+  const [deletedCardIds, setDeletedCardIds] = useState([]);
 
   useEffect(() => {
     const fetchBeerData = async () => {
@@ -27,10 +28,17 @@ const Card = () => {
     setVisibleCards((prevVisibleCards) => prevVisibleCards + 5); // Додати ще 5 карток до видимих карток
   };
 
+  const handleDeleteCard = (cardId) => {
+    setDeletedCardIds((prevDeletedCardIds) => [...prevDeletedCardIds, cardId]);
+  };
+
   return (
     <div className={css.content}>
       <ul className={css.container}>
-        {beerData.slice(0, visibleCards).map((beer) => (
+        {beerData
+          .filter((beer) => !deletedCardIds.includes(beer.id))
+          .slice(0, visibleCards)
+          .map((beer) => (
           <li className={css.card} key={beer.id}>
             <img
               src={beer.image_url}
@@ -41,10 +49,11 @@ const Card = () => {
             <NavLink to={`/reciept/${beer.id}`} >
               <button className={css.reciept}>Reciept</button>
             </NavLink>
+            <button onClick={() => handleDeleteCard(beer.id)}>Delete</button>
           </li>
         ))}
       </ul>
-      <button onClick={handleAddMoreCards}>Додати</button>
+      <button onClick={handleAddMoreCards}>Add</button>
     </div>
   );
 };
