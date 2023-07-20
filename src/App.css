@@ -1,3 +1,9 @@
-header{
-  background-color: aquamarine;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('./Img/wood.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }

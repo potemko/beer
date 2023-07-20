@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px; /* Максимальна ширина картки */
+  border: 3px solid white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+.image {
+    width: 100%;
+    max-height: 300px; /* Максимальна висота зображення */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  h2 {
+    margin-top: 10px;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      width: calc(20% - 20px);
+     
+    }
+  }
+
+  button {
+    text-align: center;
+    background-color: inherit; /* Колір фону кнопки */
+    color: #fff; /* Колір тексту кнопки */
+    border: 1px solid white; /* Видалити границю кнопки */
+    border-radius: 4px; /* Закруглені кути кнопки */
+    padding: 10px 20px; /* Відступи від тексту до границі кнопки */
+    font-size: 16px; /* Розмір тексту кнопки */
+    cursor: pointer; /* Зміна вигляду курсору при наведенні на кнопку */
+  }
+  
+  
+  .content{
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  

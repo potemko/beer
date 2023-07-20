@@ -1,0 +1,33 @@
+.card {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  background-color: #694d37;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+  max-width: 800px;
+  border: 3px solid white;
+  border-radius: 8px;
+}
+.image{
+    margin: 10px;
+}
+.info{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+@media (max-width: 768px) {
+    .card {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .back{
+    margin-top: 100px;
+  }
